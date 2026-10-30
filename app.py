@@ -10,9 +10,7 @@ st.set_page_config(
 st.title("📦 Supply Chain Demand Forecasting Dashboard")
 st.write("Demand forecasting and inventory planning using statistical time-series methods.")
 
-# =========================
 # LOAD DATA
-# =========================
 
 forecast = pd.read_csv("future_30_day_forecast.csv")
 results = pd.read_csv("forecast_results.csv")
@@ -22,9 +20,7 @@ forecast["date"] = pd.to_datetime(forecast["date"])
 results["date"] = pd.to_datetime(results["date"])
 
 
-# =========================
 # KPI SECTION
-# =========================
 
 avg_demand = inventory.loc[
     inventory["metric"] == "Average Daily Demand", "value"
@@ -53,9 +49,7 @@ col3.metric("Reorder Point", f"{reorder_point:,.0f}")
 col4.metric("Forecast MAPE", f"{mape:.2f}%")
 
 
-# =========================
 # FUTURE FORECAST
-# =========================
 
 st.subheader("📈 30-Day Demand Forecast")
 
@@ -74,9 +68,7 @@ ax.legend()
 st.pyplot(fig)
 
 
-# =========================
 # ACTUAL VS PREDICTED
-# =========================
 
 st.subheader("🎯 Actual vs Predicted Demand")
 
@@ -101,9 +93,7 @@ ax2.legend()
 st.pyplot(fig2)
 
 
-# =========================
 # INVENTORY ANALYSIS
-# =========================
 
 st.subheader("📦 Inventory Planning")
 
@@ -112,10 +102,7 @@ st.dataframe(
     use_container_width=True
 )
 
-
-# =========================
 # FORECAST TABLE
-# =========================
 
 st.subheader("🔮 Future Demand")
 
