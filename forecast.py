@@ -131,9 +131,7 @@ print("\n30-day future forecast saved to future_30_day_forecast.csv")
 print("\nNEXT 30 DAYS ")
 print(future_results.to_string(index=False))
 
-# =========================
 # 8. INVENTORY & REORDER ANALYSIS
-# =========================
 
 # Average daily demand
 avg_daily_demand = df["demand"].mean()
