@@ -163,9 +163,7 @@ print(f"Reorder Point        : {reorder_point:.2f}")
 print("=========================================")
 
 
-# =========================
 # 9. INVENTORY SUMMARY
-# =========================
 
 inventory_summary = pd.DataFrame({
     "metric": [
